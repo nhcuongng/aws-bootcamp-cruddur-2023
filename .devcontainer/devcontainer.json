@@ -1,5 +1,12 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postCreateCommand": "curl \"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip\" -o \"awscliv2.zip\" && unzip awscliv2.zip && sudo ./aws/install",
   "features": {},
-  "postCreateCommand": "cd /workspace && curl \"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip\" -o \"awscliv2.zip\" && unzip awscliv2.zip && sudo ./aws/install && cd $THEIA_WORKSPACE_ROOT"
+  "customizations": {
+    "vscode": {
+      "settings": {}
+    }
+  },
+  "containerEnv": {
+    "AWS_CLI_AUTO_PROMPT": "on-partial"
+  }
 }
